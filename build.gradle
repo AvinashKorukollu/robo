@@ -2,6 +2,7 @@ group 'myGroup'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'application'
 
 mainClassName = "java.Robo"
 sourceCompatibility = 1.8
