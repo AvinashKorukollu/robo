@@ -17,7 +17,7 @@ public class Servo {
         servoBoard.setPWMFreq(60);
     }
 
-    public void servo1_clockwise(int rotation) {
+    public void servo1_clockwise(double rotation) {
         if( servo1Position + rotation < 600) {
             servo1Position += rotation;
             servoBoard.setPWM(SERVO_1,   0, servo1Position);
@@ -27,7 +27,7 @@ public class Servo {
         }
     }
 
-    public void servo1_antiClockwise(int rotation) {
+    public void servo1_antiClockwise(double rotation) {
         if( servo1Position - rotation < 150) {
             servo1Position -= rotation;
             servoBoard.setPWM(SERVO_1,   0, servo1Position);
@@ -37,7 +37,7 @@ public class Servo {
         }
     }
 
-    public void servo2_clockwise(int rotation) {
+    public void servo2_clockwise(double rotation) {
         if( servo2Position + rotation < 600) {
             servo2Position += rotation;
             servoBoard.setPWM(SERVO_2,   0, servo2Position);
@@ -47,7 +47,7 @@ public class Servo {
         }
     }
 
-    public void servo2_antiClockwise(int rotation) {
+    public void servo2_antiClockwise(double rotation) {
         if( servo2Position - rotation > 150) {
             servo2Position -= rotation;
             servoBoard.setPWM(SERVO_2,   0, servo2Position);

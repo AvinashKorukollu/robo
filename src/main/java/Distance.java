@@ -1,7 +1,6 @@
 import com.pi4j.io.gpio.*;
 
 public class Distance {
-    GpioController gpio = GpioFactory.getInstance();
 
     private static GpioPinDigitalOutput sensorTriggerPin_front;
     private static GpioPinDigitalInput sensorEchoPin_front;
@@ -10,11 +9,11 @@ public class Distance {
     private static GpioPinDigitalInput sensorEchoPin_back;
 
     public Distance() {
-        sensorTriggerPin_front = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_00);
-        sensorEchoPin_front = gpio.provisionDigitalInputPin(RaspiPin.GPIO_02, PinPullResistance.PULL_DOWN);
+        sensorTriggerPin_front = Robo.GPIO.provisionDigitalOutputPin(RaspiPin.GPIO_00);
+        sensorEchoPin_front = Robo.GPIO.provisionDigitalInputPin(RaspiPin.GPIO_02, PinPullResistance.PULL_DOWN);
 
-        sensorTriggerPin_back = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_00);
-        sensorEchoPin_back = gpio.provisionDigitalInputPin(RaspiPin.GPIO_02, PinPullResistance.PULL_DOWN);
+        sensorTriggerPin_back = Robo.GPIO.provisionDigitalOutputPin(RaspiPin.GPIO_00);
+        sensorEchoPin_back = Robo.GPIO.provisionDigitalInputPin(RaspiPin.GPIO_02, PinPullResistance.PULL_DOWN);
     }
 
     public double distanceFront() throws InterruptedException {
